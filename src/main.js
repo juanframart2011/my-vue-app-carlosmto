@@ -3,10 +3,8 @@ import './style.css'
 import App from './App.vue'
 import router from "./router";
 
-import store from "./store";
+//import store from "./store";
 import Vuex from 'vuex';
-import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
 import axios from "axios";
 
 import PrimeVue from "primevue/config";
@@ -17,13 +15,13 @@ import "primeflex/primeflex.css";
 
 const app = createApp(App);
 
-axios.defaults.baseURL = process.env.VUE_APP_API_SERVER;
-app.config.globalProperties.$baseUrl = process.env.VUE_APP_BASE_SERVER;
-app.config.globalProperties.$baseApiUrl = process.env.VUE_APP_API_SERVER;
+axios.defaults.baseURL = 'https://fakestoreapi.com/';
+app.config.globalProperties.$baseUrl = 'https://fakestoreapi.com/';
+app.config.globalProperties.$baseApiUrl = 'https://fakestoreapi.com/';
 
-app.config.productionTip = process.env.VUE_APP_PRODUCTION;
+app.config.productionTip = false;
 
 app.use(PrimeVue, { ripple: true });
-app.use(router).use(store)
+app.use(router)
 .use(Vuex)
 .mount('#app');

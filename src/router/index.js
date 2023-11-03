@@ -29,7 +29,7 @@ const routes = [
 ];
 
 const router = new createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory('/'),
   routes,
   mode: 'history', // Opcional, para usar rutas limpias sin el # en la URL
 });

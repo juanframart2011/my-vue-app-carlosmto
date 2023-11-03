@@ -1,36 +1,21 @@
+<script setup>
+import { ref } from 'vue';
+import axios from "axios";
+
+let products = ref({});
+
+axios.get("products")
+    .then((response) => {
+        debugger;
+        //this.products = response.data;
+    })
+    .catch((error) => {
+        console.warn(error);
+    });
+</script>
 <template>
     
-  </template>
-
-<script>
-    
-  import axios from "axios";
-  export default {
-    name: "ProductListView",
-    props: ['dato'],
-    components: {},
-    data() {
-      return {
-        proucts: []
-      };
-    },
-    methods: {
-        _getProducts(){
-            
-            axios.get("products")
-            .then((response) => {
-              //this.proucts = response.data;
-            })
-            .catch((error) => {
-              console.warn(error);
-            });
-        }
-    },
-    mounted(){
-        this._getProducts();
-    }
-  };
-</script>
+</template>
   
  <style scoped>
 </style>
